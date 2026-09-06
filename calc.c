@@ -18,7 +18,25 @@ If the operation "type" == +, the final value should increment by the result of 
 If the operation "type" == -, the final value should increment by the result of a - b.
 */
 int calc(op* ops, int op_len) {
-    
+
+    int final_value = 0;
+
+    for (int i = 0; i < op_len; i++) {
+
+        if (ops[i].type == '?') {
+            final_value = final_value + mystery(ops[i].a, ops[i].b);
+        }
+
+        if (ops[i].type == '+') {
+            final_value = final_value + (ops[i].a + ops[i].b);
+        }
+
+        if (ops[i].type == '-') {
+            final_value = final_value + (ops[i].a - ops[i].b);
+        }
+
+    }
+    return final_value;
 }
 
 int main(void) {
