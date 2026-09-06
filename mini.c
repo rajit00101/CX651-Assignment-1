@@ -6,7 +6,11 @@
     Returns 11 if x > 3, otherwise returns 17.
 */
 unsigned long long sort(long long x) {
-    
+
+    if (x > 3) {
+        return 11;
+    }
+    return 17;
 }
 
 /*
@@ -15,7 +19,16 @@ unsigned long long sort(long long x) {
     All other cases return 33.
 */
 unsigned long long branch(long long x, long long y) {
-    
+
+    if (x > y) {
+        return 1;
+    }
+
+    if (x > 3 && y > 3) {
+        return 12;
+    }
+
+    return 33;
 }
 
 /*
@@ -24,5 +37,12 @@ unsigned long long branch(long long x, long long y) {
     For example loop(3,2) = 3*2 + 2*1 = 8.
 */
 int loop(int x, int y) {
-    
+    int sum = 0;
+
+    while (x > 0 && y > 0){
+        sum += x * y;
+        x --;
+        y --;
+    }
+    return sum;
 }
