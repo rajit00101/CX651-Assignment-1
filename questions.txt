@@ -1,0 +1,2 @@
+(1) write(1, "hello STDOUT\n", 13hello STDOUT) = 13 and write(2, "ERROR: this is an error\n", 24ERROR: this is an error) = 24 are the two write syscalls corresponding to the two lines I added.
+(2) openat is another syscall shown in the output. It opens a file relative to a specified directory file descriptor and returns a file descriptor that the program can use to access the file.
